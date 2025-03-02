@@ -13,7 +13,7 @@ const title = 'SePer: Measure Retrieval Utility Through The Lens Of Semantic Per
 const title_color = '#000000'
 
 // 标题补充，没有则置为''即可
-const title_supp = ' (Vue based)'
+const title_supp = ''
 
 // 标题补充颜色
 const title_supp_color = '#42B883'
@@ -69,11 +69,23 @@ const addresses = [
     icon: "public/UST.svg",
     homepage: "https://hkust.edu.hk"
   },
+  {
+    address_flag: "2",
+    name: "The Hong Kong University of Science and Technology",
+    icon: "public/UST.svg",
+    homepage: "https://hkust.edu.hk"
+  },
+  {
+    address_flag: "2",
+    name: "Carnegie Mellon University",
+    icon: "public/UST.svg",
+    homepage: "https://www.cmu.edu"
+  },
 ]
 
 // 共一和通讯提示
 const con_and_corresponding_author = 
-  "#: Equal Contribution. *: Corresponding Author."
+  "*: Corresponding Author."
 
 // 最新消息
 const news = "🔥 [2025-03-02] This template project is still under development."
@@ -89,6 +101,7 @@ const buttons = [
     disabled: true,
     name: "Paper",
     component: Document,
+    link: "https://openreview.net/forum?id=ixMBnOhFGd
   },
   {
     disabled: true,
@@ -116,18 +129,6 @@ const buttons = [
     disabled: true,
     name: "Slide",
     component: DataAnalysis,
-  },
-  {
-    disabled: true,
-    name: "Video (减论)",
-    link: "https://www.bilibili.com/video/BV15XkgYiE73/",
-    component: Film,
-  },
-  {
-    disabled: true,
-    name: "Video (Tutorial)",
-    link: "https://www.bilibili.com/video/BV1oUrfYzEqZ",
-    component: Film,
   },
 ]
 
