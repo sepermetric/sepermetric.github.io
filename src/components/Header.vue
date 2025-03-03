@@ -57,7 +57,7 @@ const more_paper = {
         </el-menu-item>
 
         <!-- 更多栏目 -->
-        <el-sub-menu index="2">
+        <el-sub-menu index="2" v-if="showMoreMenu">
             <template #title>More</template>
             <el-menu-item index="2-1">
                 <a :href=more_paper.ExtDM.link>{{ more_paper.ExtDM.name }}</a>
