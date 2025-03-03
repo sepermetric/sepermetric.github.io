@@ -25,31 +25,31 @@ const btn_color = '#444444'
 const authors = [
   {
     name: "Lu Dai",
-    icon: "public/people/ludai.jpg",
+    icon: "././public/people/ludai.jpg",
     homepage: "https://openreview.net/profile?id=~Lu_Dai1",
     address_flag: "2,1"
   },
   {
     name: "Yijie Xu",
-    icon: "public/people/yijiexu.png",
+    icon: "./public/people/yijiexu.png",
     homepage: "https://yjx.me",
     address_flag: "1"
   },
   {
     name: "Jinhui Ye",
-    icon: "public/people/jinhuiye.jpg",
+    icon: "./public/people/jinhuiye.jpg",
     homepage: "https://jhuiye.com/",
     address_flag: "1,3"
   },
   {
     name: "Hao Liu",
-    icon: "public/people/haoliu.jpg",
+    icon: "./public/people/haoliu.jpg",
     homepage: "https://raymondhliu.github.io/",
     address_flag: "1,2,*"
   },
   {
     name: "Hui Xiong",
-    icon: "public/people/huixiong.jpeg",
+    icon: "./public/people/huixiong.jpeg",
     homepage: "https://scholar.google.com/citations?user=cVDF1tkAAAAJ",
     address_flag: "1,2,*"
   },
@@ -60,19 +60,19 @@ const addresses = [
   {
     address_flag: "1",
     name: "The Hong Kong University of Science and Technology (Guangzhou)",
-    icon: "public/logos/HKUST.jpg",
+    icon: "./public/logos/HKUST.jpg",
     homepage: "https://hkust-gz.edu.cn"
   },
   {
     address_flag: "2",
     name: "The Hong Kong University of Science and Technology",
-    icon: "public/logos/HKUST.jpg",
+    icon: "./public/logos/HKUST.jpg",
     homepage: "https://hkust.edu.hk"
   },
   {
     address_flag: "3",
     name: "Carnegie Mellon University",
-    icon: "public/logos/CMU.png",
+    icon: "./public/logos/CMU.png",
     homepage: "https://www.cmu.edu"
   },
 ]
