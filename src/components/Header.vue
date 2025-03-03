@@ -5,13 +5,13 @@ import { HomeFilled, SuccessFilled } from '@element-plus/icons-vue'
 
 // 个人主页
 const home = {
-    name: "My Blog",
-    link: "https://junyaohu.github.io/",
+    name: "",
+    link: "",
 }
 
 // 项目主页
 const logo = {
-    name: "Template",
+    name: "SePer",
     link: "#",
 }
 

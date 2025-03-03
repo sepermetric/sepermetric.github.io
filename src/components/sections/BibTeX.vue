@@ -2,12 +2,12 @@
 export default {
   data() {
     return {
-      bibtex: [
-        "@article{junyaohu2023template,",
-        "    title={Academic Project Page Template Vue},",
-        "    author={Hu, Junyao},",
-        "    journal={GitHub},",
-        "    year={2023}",
+  bibtex: [
+        "@inproceedings{dai2025seper,",
+        "    title={SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction},",
+        "    author={Dai, Lu and Xu, Yijie and Ye, Jinhui and Liu, Hao and Xiong, Hui},",
+        "    booktitle={International Conference on Learning Representations (ICLR)},",
+        "    year={2025}",
         "}",
       ],
     }

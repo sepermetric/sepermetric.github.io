@@ -42,20 +42,8 @@ export default {
 
 <template>
   <Title/>
-  <Carousel/>
-  <Video/>
   <Abstract/>
   <Markdown/>
-  <Latex/>
-  <Table/>
-  <Collapse/>
-  <Echart/>
-  <Model3D/>
-  <GaussianSplats3D/>
-  <SeletionForComparison/>
-  <ImageSliderInner/>
-  <ImageSlider/>
-  <ImageSelector/>
   <BibTeX/>
   <Comment/>
 </template>

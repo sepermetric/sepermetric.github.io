@@ -4,7 +4,7 @@ import { ElIcon } from 'element-plus'
 import { Document, Files, MagicStick, Picture, DataAnalysis, Film } from '@element-plus/icons-vue'
 
 // logo地址，没有则置为""即可
-const logo = './logo.png'
+const logo = ''
 
 // 标题
 const title = 'SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction'
@@ -25,31 +25,31 @@ const btn_color = '#444444'
 const authors = [
   {
     name: "Lu Dai",
-    icon: "",
+    icon: "public/people/ludai.jpg",
     homepage: "https://openreview.net/profile?id=~Lu_Dai1",
     address_flag: "2,1"
   },
   {
     name: "Yijie Xu",
-    icon: "",
+    icon: "public/people/yijiexu.png",
     homepage: "https://yjx.me",
     address_flag: "1"
   },
   {
     name: "Jinhui Ye",
-    icon: "",
+    icon: "public/people/jinhuiye.jpg",
     homepage: "https://jhuiye.com/",
     address_flag: "1,3"
   },
   {
     name: "Hao Liu",
-    icon: "",
+    icon: "public/people/haoliu.jpg",
     homepage: "https://raymondhliu.github.io/",
     address_flag: "1,2,*"
   },
   {
     name: "Hui Xiong",
-    icon: "",
+    icon: "public/people/huixiong.jpeg",
     homepage: "https://scholar.google.com/citations?user=cVDF1tkAAAAJ",
     address_flag: "1,2,*"
   },
@@ -60,25 +60,19 @@ const addresses = [
   {
     address_flag: "1",
     name: "The Hong Kong University of Science and Technology (Guangzhou)",
-    icon: "public/UST.svg",
+    icon: "public/logos/HKUST.jpg",
     homepage: "https://hkust-gz.edu.cn"
   },
   {
     address_flag: "2",
     name: "The Hong Kong University of Science and Technology",
-    icon: "public/UST.svg",
+    icon: "public/logos/HKUST.jpg",
     homepage: "https://hkust.edu.hk"
   },
   {
-    address_flag: "2",
-    name: "The Hong Kong University of Science and Technology",
-    icon: "public/UST.svg",
-    homepage: "https://hkust.edu.hk"
-  },
-  {
-    address_flag: "2",
+    address_flag: "3",
     name: "Carnegie Mellon University",
-    icon: "public/UST.svg",
+    icon: "public/logos/CMU.png",
     homepage: "https://www.cmu.edu"
   },
 ]
@@ -98,27 +92,16 @@ const emphases = [
 // 提供引导资料链接
 const buttons = [
   {
-    disabled: true,
+    disabled: false,
     name: "Paper",
     component: Document,
-    link: "https://openreview.net/forum?id=ixMBnOhFGd
-  },
-  {
-    disabled: true,
-    name: "中译版",
-    component: Document,
+    link: "https://openreview.net/forum?id=ixMBnOhFGd"
   },
   {
     disabled: false,
     name: "Code",
     link: "https://github.com/sepermetric/seper",
     component: Files,
-  },
-  {
-    disabled: true,
-    name: "Demo",
-    link: "https://junyaohu.github.io/academic-project-page-template-vue",
-    component: MagicStick,
   },
   {
     disabled: true,

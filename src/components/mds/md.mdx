@@ -1,53 +1,358 @@
-# Markdown (H1)
+# Benchmark For Retrievers
 
-The render result of `md.mdx` is here.
+Here is the benchmark for retrievers. We include `SePer@k` and `Recall@k` as metrics and report the results of $k=1,5,10$ ($k$ is the number of retrived documents). For SePer, we use `llama-2-7b-chat` and `llama-2-13b-chat` as the generator model. The two metrics demonstates high consistency. More retrievers and generators will come soon.
 
-## Good (H2)
+Some quick take-aways:
 
-### Nice (H3)
+1. `SePer` shows high consistency among different generators in retriever evaluation.
+2. `SePer` aligns well with main metrics such as `Recall@k` in retriever evaluation.
+3. `SePer` aligns well with the difficulty level of dataset.
 
-[**Diffusion models**](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/) are a class of generative models in machine learning that have gained significant attention in recent years. 
+{/* Benchmark Results Table */}
+<div style={{ overflowX: 'auto' }}>
+  <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+    <thead>
+      <tr>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} colSpan="2">Metric</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} colSpan="6">SePer</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} colSpan="3">Recall</th>
+      </tr>
+      <tr>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} colSpan="2">Topk</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} colSpan="2">1</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} colSpan="2">5</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} colSpan="2">10</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>1</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>5</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>10</th>
+      </tr>
+      <tr>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>Dataset name</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>Retriever</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>Llama-2-7b</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>Llama-2-13b</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>Llama-2-7b</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>Llama-2-13b</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>Llama-2-7b</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>Llama-2-13b</th>
+        <th style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} colSpan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {/* NQ Dataset */}
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} rowSpan="5">NQ</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bge</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.481</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.467</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.547</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.555</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.552</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.569</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.507</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.740</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.800</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bm25</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.299</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.289</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.384</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.395</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.426</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.449</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.248</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.463</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.562</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>contriever</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.318</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.328</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.426</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.439</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.465</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.490</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.272</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.539</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.632</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>dpr</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.420</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.407</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.486</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.500</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.507</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.528</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.424</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.662</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.722</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>e5</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.521</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.507</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.574</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.581</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.577</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.583</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>-</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.774</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.833</td>
+      </tr>
 
-**Text-to-image diffusion models** have various application scenarios, including:
+      {/* TriviaQA Dataset */}
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} rowSpan="5">TriviaQA</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bge</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.655</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.648</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.701</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.714</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.723</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.735</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.580</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.738</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.795</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bm25</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.631</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.631</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.658</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.686</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.684</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.712</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.508</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.688</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.739</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>contriever</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.580</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.603</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.659</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.680</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.685</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.712</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.427</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.659</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.734</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>dpr</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.613</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.631</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.692</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.712</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.707</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.733</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.555</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.740</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.786</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>e5</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.703</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.691</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.739</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.751</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.755</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.763</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.635</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.779</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.818</td>
+      </tr>
 
-- **Art & Design**: Used by artists for creative art and fashion designers to generate clothing renderings.
-- **Advertising & Marketing**: Helps in creating advertising posters and product promotion maps.
-- **Game & Film**: Applied in game scene and character design, as well as film and television concept design...
+      {/* 2WikiMultihopQA Dataset */}
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} rowSpan="5">2WikiMultihopQA</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bge</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.388</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.368</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.423</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.409</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.428</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.438</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.216</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.405</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.467</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bm25</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.394</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.385</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.413</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.416</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.423</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.452</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.244</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.390</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.457</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>contriever</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.374</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.367</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.393</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.398</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.405</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.425</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.154</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.273</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.335</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>dpr</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.347</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.340</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.372</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.359</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.382</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.386</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.150</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.244</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.299</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>e5</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.386</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.372</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.410</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.411</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.422</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.442</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.223</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.384</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.467</td>
+      </tr>
 
-> Thegeneral training steps of diffusion models are as follows:
+      {/* HotpotQA Dataset */}
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} rowSpan="5">HotpotQA</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bge</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.409</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.393</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.439</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.438</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.452</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.463</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.326</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.573</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.639</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bm25</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.399</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.376</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.439</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.442</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.446</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.455</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.311</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.496</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.564</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>contriever</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.325</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.320</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.368</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.356</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.386</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.391</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.198</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.359</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.440</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>dpr</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.330</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.316</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.351</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.355</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.367</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.376</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.229</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.376</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.438</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>e5</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.394</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.388</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.438</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.429</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.444</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.456</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.307</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.534</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.610</td>
+      </tr>
 
-1. Data collection
-2. Noise addition
-3. Model building
-4. Training
-5. Evaluation
-6. Deployment
-
-
-```
-import torch 
-
-def denoise():
-    pass
-```
-
-* [ ] to do
-* [x] done
-* [x] ~114514~
-
-![](./logo_vision_aigc.png)
-
-Lift ($$L$$) can be determined by Lift Coefficient ($$C_L$$) like the following
-equation.
-
-$$
-L = \frac{1}{2} \rho v^2 S C_L
-$$
-
-
-### Table (H3)
-
-| a       | b       | c     |  d      |
-| -       | :-      | -:    | :-:     |
-| Alpha   | Bravo   | Alpha | Bravo   |
-| 中文    | Charlie | 👩‍❤️‍👩    | Delta   |
+      {/* PopQA Dataset */}
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }} rowSpan="5">PopQA</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bge</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.465</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.465</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.498</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.524</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.486</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.526</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.510</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.704</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.766</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>bm25</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.296</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.293</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.343</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.350</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.367</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.377</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.286</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.437</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.488</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>contriever</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.306</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.302</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.366</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.378</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.391</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.397</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.281</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.446</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.508</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>dpr</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.339</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.332</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.405</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.420</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.407</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.436</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.355</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.532</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center' }}>0.593</td>
+      </tr>
+      <tr>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', fontWeight: 'bold' }}>e5</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.483</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.477</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.521</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.539</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#DAEEF3' }}>0.521</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#FDE9D9' }}>0.546</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.528</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.729</td>
+        <td style={{ border: '1px solid #333', padding: '8px', textAlign: 'center', backgroundColor: '#E4DFEC' }}>0.790</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
