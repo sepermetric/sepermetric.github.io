@@ -59,19 +59,19 @@ const authors = [
 const addresses = [
   {
     address_flag: "1",
-    name: "The Hong Kong University of Science and Technology (Guangzhou)",
+    name: "HKUST(Guangzhou)",
     icon: "./logos/HKUST.jpg",
     homepage: "https://hkust-gz.edu.cn"
   },
   {
     address_flag: "2",
-    name: "The Hong Kong University of Science and Technology",
+    name: "HKUST",
     icon: "./logos/HKUST.jpg",
     homepage: "https://hkust.edu.hk"
   },
   {
     address_flag: "3",
-    name: "Carnegie Mellon University",
+    name: "CMU",
     icon: "./logos/CMU.png",
     homepage: "https://www.cmu.edu"
   },
