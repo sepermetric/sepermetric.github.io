@@ -49,7 +49,7 @@ const authors = [
   },
   {
     name: "Hui Xiong",
-    icon: "./people/huixiong.jpeg",
+    icon: "./people/huixiong.png",
     homepage: "https://scholar.google.com/citations?user=cVDF1tkAAAAJ",
     address_flag: "1,2,*"
   },
