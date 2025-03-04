@@ -82,7 +82,7 @@ const con_and_corresponding_author =
   "*: Corresponding Author."
 
 // 最新消息
-const news = "🔥 [2025-03-02] This template project is still under development."
+const news = ""
 
 // 强调内容
 const emphases = [
