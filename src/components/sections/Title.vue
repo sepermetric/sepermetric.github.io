@@ -82,7 +82,7 @@ const con_and_corresponding_author =
   "*: Corresponding Author."
 
 // 最新消息
-const news = ""
+const news = "hihihi"
 
 // 强调内容
 const emphases = [
@@ -121,7 +121,7 @@ const buttons = [
   <div>
 
     <!-- 最新消息提示 -->
-    <el-row justify="center">
+    <el-row justify="center" v-if="false">
       <el-col :span="24">
         <el-alert title="🔥 This template is still under development." type="success" />
       </el-col>
