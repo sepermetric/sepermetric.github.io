@@ -106,6 +106,7 @@ const buttons = [
   {
     disabled: true,
     name: "Poster",
+    link: "https://github.com/sepermetric/sepermetric.github.io/blob/main/src/assets/poster_update.png",
     component: Picture,
   },
   {
