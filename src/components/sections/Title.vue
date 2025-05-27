@@ -104,14 +104,15 @@ const buttons = [
     component: Files,
   },
   {
-    disabled: true,
+    disabled: false,
     name: "Poster",
     link: "https://github.com/sepermetric/sepermetric.github.io/blob/main/src/assets/poster_update.png",
     component: Picture,
   },
   {
-    disabled: true,
+    disabled: false,
     name: "Slide",
+    link: "https://github.com/sepermetric/sepermetric.github.io/blob/main/src/assets/seper_slides.pptx",
     component: DataAnalysis,
   },
 ]
