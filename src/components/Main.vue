@@ -17,6 +17,8 @@ import Latex from './sections/Latex.vue'
 import Model3D from './sections/Model3D.vue'
 import GaussianSplats3D from './sections/GaussianSplats3D.vue'
 import PipelineMarkdown from './sections/PipelineMarkdown.vue'
+import CaseMarkdown from './sections/CaseMarkdown.vue'
+
 
 export default {
   components: {
@@ -37,7 +39,8 @@ export default {
     Latex,
     Model3D,
     GaussianSplats3D,
-    PipelineMarkdown
+    PipelineMarkdown,
+    CaseMarkdown
   }
 }
 </script>
@@ -46,6 +49,7 @@ export default {
   <Title/>
   <Abstract/>
   <PipelineMarkdown/>
+  <CaseMarkdown/>
   <Markdown/>
   <BibTeX/>
   <Comment/>
