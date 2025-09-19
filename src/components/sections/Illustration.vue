@@ -65,8 +65,7 @@ export default {
 }
 
 .illustration-gif {
-  max-width: 45%;
-  max-height: 300px;
+  max-width: 55%;
   width: auto;
   height: auto;
   border-radius: 10px;
@@ -100,7 +99,6 @@ export default {
 @media (max-width: 768px) {
   .illustration-gif {
     max-width: 47.5%;
-    max-height: 200px;
   }
   
   .section-title {
@@ -111,7 +109,6 @@ export default {
 @media (max-width: 480px) {
   .illustration-gif {
     max-width: 50%;
-    max-height: 150px;
   }
   
   .section-title {
