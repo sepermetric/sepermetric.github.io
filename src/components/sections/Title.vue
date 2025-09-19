@@ -145,12 +145,40 @@ const buttons = [
     </el-row>
 
     <!-- SePer 核心描述 -->
-    <el-row justify="center" style="margin: 20px 0;">
-      <el-col :span="22">
+    <el-row justify="center" style="margin: 30px 0;">
+      <el-col :span="20">
         <div class="seper-description">
-          <h2 style="color: #2c3e50; font-size: 24px; font-weight: bold; text-align: center; margin: 10px 0;">
-            SePer is an <span style="color: #e74c3c;">accurate</span> / <span style="color: #27ae60;">fast</span> / <span style="color: #3498db;">free-of-API</span> metric to measure document quality via information gain.
-          </h2>
+          <!-- 主要描述 -->
+          <div class="main-description">
+            <h2 style="color: #2c3e50; font-size: 28px; font-weight: bold; text-align: center; margin: 0 0 25px 0; line-height: 1.4;">
+              SePer is an <span style="color: #e74c3c; background: rgba(231, 76, 60, 0.1); padding: 2px 8px; border-radius: 4px;">accurate</span> / <span style="color: #27ae60; background: rgba(39, 174, 96, 0.1); padding: 2px 8px; border-radius: 4px;">fast</span> / <span style="color: #3498db; background: rgba(52, 152, 219, 0.1); padding: 2px 8px; border-radius: 4px;">free-of-API</span> metric to measure document quality via information gain.
+            </h2>
+          </div>
+          
+          <!-- 扩展功能描述 -->
+          <div class="extended-capabilities">
+            <div style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); border-radius: 16px; padding: 25px; border: 2px solid #e9ecef; box-shadow: 0 8px 25px rgba(0,0,0,0.08); position: relative; overflow: hidden;">
+              <!-- 装饰性背景元素 -->
+              <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: linear-gradient(45deg, #3498db, #2980b9); border-radius: 50%; opacity: 0.1;"></div>
+              <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background: linear-gradient(45deg, #e74c3c, #c0392b); border-radius: 50%; opacity: 0.08;"></div>
+              
+              <!-- 内容 -->
+              <div style="position: relative; z-index: 1;">
+                <div style="text-align: center; margin-bottom: 20px;">
+                  <span style="font-size: 20px; font-weight: bold; color: #2c3e50; background: linear-gradient(45deg, #3498db, #2980b9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    🚀 What's more:
+                  </span>
+                </div>
+                <p style="color: #495057; font-size: 17px; font-weight: 400; text-align: center; margin: 0; line-height: 1.7;">
+                  Without modifying code, it can also be used to evaluate the quality of 
+                  <span style="color: #ffffff; background: #e8a5a5; padding: 4px 10px; border-radius: 20px; font-weight: 600; margin: 0 2px;">prompt design</span>, 
+                  <span style="color: #ffffff; background: #90c695; padding: 4px 10px; border-radius: 20px; font-weight: 600; margin: 0 2px;">retriever</span>, 
+                  <span style="color: #ffffff; background: #f2c494; padding: 4px 10px; border-radius: 20px; font-weight: 600; margin: 0 2px;">agentic workflow</span>, 
+                  as well as their <span style="color: #ffffff; background: #c4a5d1; padding: 4px 10px; border-radius: 20px; font-weight: 600; margin: 0 2px;">in-the-middle components</span>!
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </el-col>
     </el-row>
