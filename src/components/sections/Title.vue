@@ -150,7 +150,7 @@ const buttons = [
         <div class="seper-description">
           <!-- 主要描述 -->
           <div class="main-description">
-            <h2 style="color: #2c3e50; font-size: 28px; font-weight: bold; text-align: center; margin: 0 0 25px 0; line-height: 1.4;">
+            <h2 style="color: #2c3e50; font-size: 24px; font-weight: bold; text-align: center; margin: 0 0 25px 0; line-height: 1.4;">
               SePer is an <span style="color: #e74c3c; background: rgba(231, 76, 60, 0.1); padding: 2px 8px; border-radius: 4px;">accurate</span> / <span style="color: #27ae60; background: rgba(39, 174, 96, 0.1); padding: 2px 8px; border-radius: 4px;">fast</span> / <span style="color: #3498db; background: rgba(52, 152, 219, 0.1); padding: 2px 8px; border-radius: 4px;">free-of-API</span> metric to measure document quality via information gain.
             </h2>
           </div>
