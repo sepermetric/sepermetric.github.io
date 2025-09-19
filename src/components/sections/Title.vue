@@ -144,6 +144,17 @@ const buttons = [
       </el-col>
     </el-row>
 
+    <!-- SePer 核心描述 -->
+    <el-row justify="center" style="margin: 20px 0;">
+      <el-col :span="22">
+        <div class="seper-description">
+          <h2 style="color: #2c3e50; font-size: 24px; font-weight: bold; text-align: center; margin: 10px 0;">
+            SePer is an <span style="color: #e74c3c;">accurate</span> / <span style="color: #27ae60;">fast</span> / <span style="color: #3498db;">free-of-API</span> metric to measure document quality via information gain.
+          </h2>
+        </div>
+      </el-col>
+    </el-row>
+
     <!-- 作者名单 -->
     <el-row justify="center">
       <a :href=author.homepage v-for="author in authors">
@@ -206,6 +217,32 @@ const buttons = [
   font-size: 42px;
   margin: 32px;
   text-align: center;
+}
+
+/* SePer 描述样式 */
+.seper-description {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e8e8e8;
+  margin: 20px 0;
+}
+
+.seper-description h2 {
+  animation: fadeInUp 1s ease-out;
+  line-height: 1.4;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 姓名和地址按钮 */
