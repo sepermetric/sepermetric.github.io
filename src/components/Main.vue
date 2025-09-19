@@ -1,5 +1,6 @@
 <script>
 import Title from './sections/Title.vue'
+import Illustration from './sections/Illustration.vue'
 import Abstract from './sections/Abstract.vue'
 import Markdown from './sections/Markdown.vue'
 import BibTeX from './sections/BibTeX.vue'
@@ -23,6 +24,7 @@ import CaseMarkdown from './sections/CaseMarkdown.vue'
 export default {
   components: {
     Title,
+    Illustration,
     Abstract,
     Markdown,
     BibTeX,
@@ -47,6 +49,7 @@ export default {
 
 <template>
   <Title/>
+  <Illustration/>
   <Abstract/>
   <PipelineMarkdown/>
   <CaseMarkdown/>
