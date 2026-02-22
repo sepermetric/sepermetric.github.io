@@ -1,17 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="Project Template, Project Page">
-    <meta name="description" content="academic-project-page-template-vue">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <title>SePer Project Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SePer Project Page | ICLR 2025 Spotlight</title>
+    <meta
+      name="description"
+      content="SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction (ICLR 2025 Spotlight). Official project page with paper, code, benchmark, and resources for RAG evaluation."
+    />
+    <meta
+      name="keywords"
+      content="SePer, retrieval utility, semantic perplexity reduction, RAG evaluation, retrieval-augmented generation, ICLR 2025 Spotlight, LLM evaluation"
+    />
+    <meta name="author" content="Lu Dai, Yijie Xu, Jinhui Ye, Hao Liu, Hui Xiong" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+    <link rel="canonical" href="https://sepermetric.github.io/" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SePer" />
+    <meta property="og:title" content="SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction" />
+    <meta
+      property="og:description"
+      content="Official project page of SePer (ICLR 2025 Spotlight): a utility-centric metric for retrieval evaluation in RAG."
+    />
+    <meta property="og:url" content="https://sepermetric.github.io/" />
+    <meta property="og:image" content="https://sepermetric.github.io/pipeline.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction" />
+    <meta
+      name="twitter:description"
+      content="ICLR 2025 Spotlight project page for SePer: measuring retrieval utility via semantic perplexity reduction."
+    />
+    <meta name="twitter:image" content="https://sepermetric.github.io/pipeline.png" />
+
+    <!-- Scholarly metadata (Google Scholar and academic indexers) -->
+    <meta name="citation_title" content="SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction" />
+    <meta name="citation_author" content="Lu Dai" />
+    <meta name="citation_author" content="Yijie Xu" />
+    <meta name="citation_author" content="Jinhui Ye" />
+    <meta name="citation_author" content="Hao Liu" />
+    <meta name="citation_author" content="Hui Xiong" />
+    <meta name="citation_conference_title" content="International Conference on Learning Representations (ICLR)" />
+    <meta name="citation_publication_date" content="2025/01/01" />
+    <meta name="citation_doi" content="10.48550/arXiv.2503.01478" />
+    <meta name="citation_arxiv_id" content="2503.01478" />
+    <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2503.01478.pdf" />
+    <meta name="citation_abstract_html_url" content="https://sepermetric.github.io/" />
+
+    <!-- JSON-LD: ScholarlyArticle -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+        "name": "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+        "description": "SePer introduces a utility-centric metric for RAG evaluation by measuring semantic perplexity reduction.",
+        "author": [
+          { "@type": "Person", "name": "Lu Dai" },
+          { "@type": "Person", "name": "Yijie Xu" },
+          { "@type": "Person", "name": "Jinhui Ye" },
+          { "@type": "Person", "name": "Hao Liu" },
+          { "@type": "Person", "name": "Hui Xiong" }
+        ],
+        "datePublished": "2025-01-01",
+        "isPartOf": {
+          "@type": "PublicationEvent",
+          "name": "International Conference on Learning Representations (ICLR) 2025"
+        },
+        "identifier": [
+          "https://doi.org/10.48550/arXiv.2503.01478",
+          "https://arxiv.org/abs/2503.01478",
+          "https://openreview.net/forum?id=ixMBnOhFGd"
+        ],
+        "url": "https://sepermetric.github.io/",
+        "sameAs": [
+          "https://arxiv.org/abs/2503.01478",
+          "https://openreview.net/forum?id=ixMBnOhFGd",
+          "https://github.com/sepermetric/seper"
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD: SoftwareSourceCode -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "SePer",
+        "description": "Official implementation of SePer for retrieval utility evaluation in RAG.",
+        "codeRepository": "https://github.com/sepermetric/seper",
+        "url": "https://sepermetric.github.io/",
+        "license": "https://spdx.org/licenses/Apache-2.0.html",
+        "programmingLanguage": "Python"
+      }
+    </script>
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VZ69J1XK8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
       gtag('config', 'G-3VZ69J1XK8');
     </script>
