@@ -1,0 +1,19 @@
+# SePer Project Page
+
+SePer is a utility-centric metric for RAG evaluation. It measures retrieval utility via semantic perplexity reduction.
+
+## Canonical links
+- Project page: https://sepermetric.github.io/
+- Paper (arXiv): https://arxiv.org/abs/2503.01478
+- Paper (OpenReview / ICLR 2025 Spotlight): https://openreview.net/forum?id=ixMBnOhFGd
+- Code: https://github.com/sepermetric/seper
+
+## Authors
+- Lu Dai
+- Yijie Xu
+- Jinhui Ye
+- Hao Liu
+- Hui Xiong
+
+## Suggested citation identifier
+- DOI: 10.48550/arXiv.2503.01478
